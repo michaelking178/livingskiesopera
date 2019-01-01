@@ -1,0 +1,336 @@
+/*----- GENERAL SETUP -----*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, p {
+    font-family: 'Thasadith',  sans-serif;
+    letter-spacing: 0.1em;
+    color: #fff;
+    z-index: 1;
+    font-weight: 400;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/*----- SPLASH TEXT -----*/
+.splash {
+    height: 100vh;
+    width: 100%;
+    background: #191919;
+}
+
+.splash h1, .splash h3, .splash p {
+    position: relative;
+    text-align: center;
+}
+
+.splash p {
+    margin-top: 2rem;
+    margin-bottom: 5%;
+    transition: 0.5s linear;
+}
+
+.splash a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: 0.1s linear;
+    animation: linkAnimation 6s linear;
+}
+@keyframes linkAnimation {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.splash a:hover {
+    color: #dedede;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#home {
+    transition: 0.5s linear;
+}
+
+#home h1 {
+    animation: titleAnimation 3s ease-in-out;
+}
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        margin-top: 30vh;
+        font-size: 5rem;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+#home h3 {
+    animation: subtitleAnimation 5s linear;
+}
+@keyframes subtitleAnimation {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#nav {
+    transition: 1s linear;
+}
+
+/*----- CONTENT STYLING -----*/
+
+.content h3, .content p {
+    animation: contentAnimation 1s linear;
+}
+
+@keyframes contentAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*----- TRANSITION CLASSES -----*/
+
+.hidden {
+    display: none;
+}
+
+/*----- SPLASH BACKGROUND SLIDESHOW -----*/
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: splashAnimation 50s linear infinite;
+}
+@keyframes splashAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+
+.slideshow li:nth-child(1) {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url(../prairie1.jpg);
+}
+
+.slideshow li:nth-child(2) {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url(../prairie2.jpg);
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3) {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url(../prairie3.jpg);
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4) {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url(../prairie4.jpg);
+    animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5) {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url(../prairie5.jpg);
+    animation-delay: 40s;
+}
+
+/*----- SCREEN SPECIFIC STYLING -----*/
+
+/* XL Screen */
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .splash a {
+        font-size: 1.5rem;
+        padding: 5px 15px;
+        margin: 0 5%;
+    }
+
+    #home h1 {
+        font-size: 7rem;
+        margin-top: 35vh;
+    }
+    
+    #home h3 {
+        font-size: 2rem;
+    }
+
+    .content {
+        margin: 5vh;
+    }
+
+    .content h3 {
+        font-size: 2rem;
+    }
+    
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .raise {
+        margin-top: -30vh;
+    }
+}
+
+/* Large Screen */
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .splash a {
+        font-size: 1rem;
+        padding: 5px 15px;
+        margin: 0 5%;
+    }
+
+    #home h1 {
+        font-size: 6rem;
+        margin-top: 25vh;
+    }
+
+    #home h3 {
+        font-size: 2rem;
+    }
+
+    .content {
+        margin: 5vh;
+    }
+
+    .content h3 {
+        font-size: 2rem;
+    }
+    
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .raise {
+        margin-top: -20vh;
+    }
+}
+
+/* Med Screen */
+@media only screen and (max-width: 991px) {
+    .splash a {
+        font-size: 0.8rem;
+        padding: 5px 15px;
+        margin: 0 4%;
+    }
+
+    #home h1 {
+        font-size: 4rem;
+        margin-top: 20vh;
+    }
+
+    #home h3 {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        margin: 3vh;
+    }
+
+    .content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .content p {
+        font-size: 1rem;
+    }
+
+    .raise {
+        margin-top: -15vh;
+    }
+}
+
+/* Small Screen */
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .splash a {
+        font-size: 0.8rem;
+        padding: 5px 15px;
+        margin: 0 3%;
+    }
+
+    .content {
+        margin: 2vh;
+    }
+
+    .content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .content p {
+        font-size: 0.9rem;
+    }
+}
