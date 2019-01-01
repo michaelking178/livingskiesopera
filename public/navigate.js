@@ -1,5 +1,5 @@
-let raised = false;
-let currentlyActive = "";
+let raised = false; // Is the navbar raised?
+let currentlyActive = ""; // Which content is currently active?
 
 $("#story-link").click(function(){
     toggleActive("#our-story");
