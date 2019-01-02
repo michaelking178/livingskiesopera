@@ -9,8 +9,8 @@ $("#calendar-link").click(function(){
     toggleActive("#calendar");
 });
 
-$("#about-link").click(function(){
-    toggleActive("#about");
+$("#gallery-link").click(function(){
+    toggleActive("#gallery");
 });
 
 function toggleActive(current) {
